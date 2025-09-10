@@ -1,0 +1,6 @@
+Storyboard for 3-minute demo video:
+0:00-0:25 - Opening: Team intro & problem brief (images of crowd congestion)
+0:25-0:45 - Show existing problems (heat, queues, waste) with quick stats
+0:45-2:10 - Live demo: Start server + run simulator (show dashboard updating), highlight a surge to RED and show Shanti Pulse reaction
+2:10-2:40 - Show technology stack and why it's novel (edge AI, LoRa, mmWave)
+2:40-3:00 - Closing: Impact and call to pilot.

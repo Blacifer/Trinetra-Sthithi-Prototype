@@ -1,0 +1,94 @@
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 119 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+bash: line 1: 39643 Hangup: 1               npm run dev
+
+> trinetra-client@1.0.0 dev
+> vite
+
+Re-optimizing dependencies because lockfile has changed
+
+  VITE v5.4.20  ready in 94 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 83 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 88 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+3:01:39 PM [vite] Internal server error: Unable to parse HTML; parse5 error code misplaced-start-tag-for-head-element
+ at /Users/patty/Downloads/Trinetra_Prototype_Submission/client/index.html:4:3
+2  |  <html>
+3  |      <script src="/socket.io/socket.io.js"></script>
+4  |    <head>
+   |    ^^^^^^
+5  |      <meta charset="utf-8" />
+6  |      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   at /Users/patty/Downloads/Trinetra_Prototype_Submission/client/index.html:4:3
+      at handleParseError (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:35172:9)
+      at Parser.onParseError (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:35097:7)
+      at Parser._err (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:4932:14)
+      at startTagInHead (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:6171:15)
+      at Parser._startTagOutsideForeignContent (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:5596:17)
+      at Parser._processStartTag (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:5578:18)
+      at Parser.onStartTag (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:5558:14)
+      at Tokenizer.emitCurrentTagToken (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:1346:26)
+      at Tokenizer._stateTagName (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:2037:22)
+      at Tokenizer._callState (file:///Users/patty/Downloads/Trinetra_Prototype_Submission/client/node_modules/vite/dist/node/chunks/dep-D-7KCb9p.js:1542:22)
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 86 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v5.4.20  ready in 91 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v4.5.14  ready in 129 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+
+> trinetra-client@1.0.0 dev
+> vite
+
+
+  VITE v4.5.14  ready in 127 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose

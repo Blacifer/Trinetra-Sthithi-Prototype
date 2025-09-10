@@ -1,0 +1,15 @@
+{
+  "name": "trinetra_prototype_submission",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "npm --prefix server install --no-audit --no-fund && npm --prefix client install --no-audit --no-fund && npm --prefix simulator install --no-audit --no-fund",
+    "dev": "concurrently -k -n SERVER,CLIENT,SIM -c green,cyan,yellow \"npm run server\" \"npm run client\" \"npm run sim\"",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm run dev",
+    "sim": "cd simulator && node simulate_sensors_node.js --server http://localhost:4000 --interval 1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}

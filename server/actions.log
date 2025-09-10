@@ -1,0 +1,4 @@
+{"type":"prediction","pred":{"type":"predicted","zone":"B","minutes":0,"confidence":0.6,"t":1757496436909}}
+{"type":"pulse_log","pulse":{"id":"pulse_1757496438910_279","zone":"B","timestamp":1757496438910,"meta":{"demoTriggeredFromPrediction":true}},"t":1757496438911}
+{"id":"act_1757496438912_532","zoneId":"B","actionType":"SHANTI_PULSE_DEMO","note":"Scheduled demo Shanti from prediction","qty":null,"pulseId":"pulse_1757496438910_279","t":1757496438912}
+{"id":"act_1757496440829_386","zoneId":"B","actionType":"DISPATCH_STAFF","note":"Demo dispatch","qty":null,"pulseId":null,"t":1757496440829}

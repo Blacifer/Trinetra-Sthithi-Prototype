@@ -1,0 +1,1 @@
+Prepare ZIP with: demo.mp4 (3-4 min), pitch_deck.pdf (or pitch_deck.txt), README.txt, code/ folder, link.txt

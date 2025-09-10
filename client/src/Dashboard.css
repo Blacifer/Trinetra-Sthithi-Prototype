@@ -1,0 +1,202 @@
+/* Dashboard.css — Trinetra Sthiti Prototype */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(to bottom, #f8fbfd, #fffaf7);
+  color: #222;
+}
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #0f172a; /* dark navy */
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.brand {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.brand .sub {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #cbd5e1;
+  margin-left: 6px;
+}
+.top-actions button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.top-actions .btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+.top-actions button:hover {
+  opacity: 0.9;
+}
+
+/* Layout */
+.content {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+}
+.main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.card-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card-body {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Heatmap */
+.heatmap-card {
+  flex: 1;
+}
+.heatmap {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+.zone-box {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.zone-box:hover {
+  transform: translateY(-2px);
+}
+.zone-name {
+  font-size: 0.9rem;
+  color: #475569;
+}
+.zone-zli {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* Alerts banner */
+.alerts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 20px;
+}
+.pred-banner {
+  background: #fff0f0;
+  border: 1px solid #fecaca;
+  padding: 12px 16px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+}
+.pred-head {
+  font-weight: 600;
+  color: #b91c1c;
+}
+.pred-sub {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  color: #444;
+}
+.pred-actions {
+  margin-top: 8px;
+}
+.pred-actions button {
+  margin-right: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.pred-actions button:hover {
+  opacity: 0.9;
+}
+
+/* Sidebar items */
+.pulse-row {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #0369a1;
+}
+.analytics-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0f172a;
+}
+.analytics-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+.copilot-txt {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+.copilot-controls button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.copilot-controls button:hover {
+  background: #1d4ed8;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 10px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.8rem;
+}

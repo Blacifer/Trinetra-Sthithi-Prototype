@@ -1,0 +1,123 @@
+// client/src/App.jsx
+import React, { useEffect, useState, useRef } from "react";
+import { io } from "socket.io-client";
+import Dashboard from "./Dashboard";
+import "./DashboardModern.css";
+import "./Dashboard.css";
+
+// point to your running server (server/index.js listens on 4000 by default)
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:4000";
+
+export default function App() {
+  const [connected, setConnected] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const socketRef = useRef(null);
+
+  // minimal zones state
+  const [zones, setZones] = useState({
+    GHAT1: { id: "GHAT1", name: "Ghat", zli: 0, crowd: null, noise: null, temp: null },
+    GHAT2: { id: "GHAT2", name: "Ghat 2", zli: 0, crowd: null, noise: null, temp: null },
+    MAIN: { id: "MAIN", name: "Main Gate", zli: 0, crowd: null, noise: null, temp: null },
+  });
+
+  useEffect(() => {
+    const socket = io(SERVER_URL, { transports: ["websocket", "polling"] });
+    socketRef.current = socket;
+
+    socket.on("connect", () => {
+      setConnected(true);
+      setMessages((m) => [{ type: "info", data: `connected (${socket.id})`, t: Date.now() }, ...m].slice(0, 50));
+      console.info("[socket] connected", socket.id);
+    });
+
+    socket.on("disconnect", (reason) => {
+      setConnected(false);
+      setMessages((m) => [{ type: "info", data: `disconnected (${reason})`, t: Date.now() }, ...m].slice(0, 50));
+      console.info("[socket] disconnected", reason);
+    });
+
+    // sensor events update zones (example payloads must match server/simulator)
+    socket.on("sensor", (d) => {
+      // expected d: { zone: "GHAT1", crowd: 100, noise: 65, temp: 30 }
+      setZones((prev) => {
+        if (!d.zone || !prev[d.zone]) return prev;
+        return {
+          ...prev,
+          [d.zone]: {
+            ...prev[d.zone],
+            crowd: d.crowd ?? prev[d.zone].crowd,
+            noise: d.noise ?? prev[d.zone].noise,
+            temp: d.temp ?? prev[d.zone].temp,
+            zli: d.zli ?? prev[d.zone].zli,
+          },
+        };
+      });
+      setMessages((m) => [{ type: "sensor", data: d, t: Date.now() }, ...m].slice(0, 50));
+    });
+
+    socket.on("action", (d) => {
+      setMessages((m) => [{ type: "action", data: d, t: Date.now() }, ...m].slice(0, 50));
+    });
+
+    socket.on("predicted", (p) => {
+      setMessages((m) => [{ type: "predicted", data: p, t: Date.now() }, ...m].slice(0, 50));
+    });
+
+    // clean up
+    return () => {
+      if (socket && socket.disconnect) socket.disconnect();
+      socketRef.current = null;
+    };
+  }, []);
+
+  const sendTestAction = async () => {
+    // POST to server API to create an action (server will emit it to all clients)
+    try {
+      const payload = { actionType: "DEMO_DISPATCH", note: "Demo dispatch from UI", zone: "GHAT1" };
+      await fetch(`${SERVER_URL}/api/action`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (e) {
+      console.error("sendTestAction error", e);
+    }
+  };
+
+  return (
+    <div className="app-root">
+      <div className="topbar">
+        <div className="brand">Trinetra Prototype <span className="sub">— live safety dashboard</span></div>
+        <div className="top-actions">
+          <button onClick={sendTestAction}>Send test action</button>
+        </div>
+      </div>
+
+      <div style={{ padding: 20 }}>
+        <div className="card" style={{ marginBottom: 20, background: "#fff6f6", border: "1px solid #f5d7d7" }}>
+          <strong style={{ color: "#b91c1c" }}>Status:</strong>
+          <div style={{ marginTop: 8 }}>
+            <div style={{ color: connected ? "green" : "crimson", fontWeight: 700 }}>{connected ? "Connected" : "Disconnected"}</div>
+            <div style={{ fontSize: 13, color: "#4b5563" }}>Server: {SERVER_URL}</div>
+          </div>
+        </div>
+
+        <Dashboard zones={zones} />
+
+        <div style={{ marginTop: 20 }} className="card">
+          <h3>Recent messages</h3>
+          {messages.length === 0 && <div style={{ color: "#666" }}>No messages yet.</div>}
+          {messages.map((m, i) => (
+            <div key={i} style={{ marginTop: 10 }}>
+              <div style={{ fontWeight: 700 }}>{m.type}</div>
+              <div style={{ color: "#666", fontSize: 13 }}>{JSON.stringify(m.data)}</div>
+              <div style={{ fontSize: 11, color: "#999" }}>{new Date(m.t).toLocaleTimeString()}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <footer className="site-footer">Trinetra Prototype — demo</footer>
+    </div>
+  );
+}
