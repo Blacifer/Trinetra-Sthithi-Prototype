@@ -1,30 +1,74 @@
-# Trinetra Sthiti — Prototype (Rasi Solutions)
+# 🔱 Trinetra Sthithi — AI-Powered Consciousness Grid for Simhastha 2028  
 
-**One-sentence:** Trinetra Sthiti is a real-time, explainable safety grid for mass gatherings — it senses crowd, environmental and kiosk signals, predicts risk, and performs humane interventions (Shanti Pulse) while guiding operators with clear recommended actions.
+**Rasi Solutions** presents Trinetra Sthithi, an AI-powered **safety and harmony system** for the Ujjain Mahakumbh (Simhastha 2028). Inspired by Lord Shiva’s divine *Trinetra*, it senses, predicts, and harmonizes human energy flows — ensuring safe, balanced, and spiritually uplifting experiences for millions of pilgrims.  
 
-## Contents
-- `server/` — Node.js backend (Express + Socket.IO). Endpoints:
-  - `POST /api/sensor-update` — push sensor readings (used by simulator)
-  - `POST /api/trigger-shanti` — force a demo Shanti Pulse
-  - `GET  /api/forecast` — per-zone forecast (minutesToBreach, confidence)
-  - `GET  /api/metrics` — pulsesTriggered, totalEvents, avgZli, zone list
-- `client/` — React + Vite dashboard (modern UI, heatmap, Copilot, analytics, Demo Mode)
-- `simulator/` — Python sensor simulator (pushes realistic data to server)
-- `run_all.sh` — optional helper to start server + simulator + client in one terminal
-- `README.md` — this file
+## 🌍 What It Does  
 
-## Why this matters (for judges)
-- **Reactive + proactive**: real-time ZLI monitoring plus short-term forecasts that say “Zone X likely to breach in N min (confidence Y)”.
-- **Explainable actions**: Operator Copilot shows top contributors and suggests actions (dispatch staff, Shanti Pulse).
-- **Memorable UX**: Shanti Pulse is a humane calming action (visual ripple + audio) that demonstrates autonomous mitigation.
-- **Demo-ready**: one-click deterministic demo that forces surge → pulse → recovery for presentation.
+Trinetra Sthithi is not just a monitoring tool — it is a **living nervous system for the Mela**:  
 
-## Quick start — single terminal (recommended)
-> Use `run_all.sh` to start the entire stack and tail logs in one terminal.
+- 🧠 **Thinks** — Predicts crowd pressure using real-time multi-sensor fusion  
+- 💓 **Feels** — Understands heat stress, noise agitation, emotional cues  
+- 🗣️ **Speaks** — Guides pilgrims & volunteers via lights, signs, chants, and multilingual audio  
+- 📈 **Learns** — Adapts to new behaviors and patterns as the event unfolds  
 
-```bash
-# from project root (first time only)
-chmod +x run_all.sh
+## ⚙️ How It Works (Current Prototype)  
 
-# start server + simulator + client and tail logs
-./run_all.sh start
+1. **Zone Intelligence Grid (ZLI)**  
+   - Inputs: crowd density, temperature, noise, kiosk feedback  
+   - Outputs: Zone Load Index (ZLI) per ghat/zone  
+
+2. **Dashboard (React + Node.js + Python)**  
+   - Live **zone cards** with ZLI, crowd, noise, temperature  
+   - **Alerts** when risk thresholds are crossed  
+   - **AI Co-Pilot Suggestions** ranked by urgency  
+   - **Shanti Pulse** button — sends calming guidance actions  
+
+3. **Simulator**  
+   - Python & Node.js scripts generate realistic sensor data  
+   - Allows demo-ready, hackathon-ready testing  
+
+## ✨ Key Features Today  
+
+- Real-time Zone Load Index (ZLI) monitoring  
+- AI Co-Pilot — actionable safety suggestions  
+- Alerts for crowd surges, heat stress, and high noise  
+- Shanti Pulse intervention system  
+- Auto-dispatch with undo option  
+- Modern, responsive **live dashboard** with sticky AI sidebar  
+
+## 🚀 Future Roadmap  
+
+- 🛰️ **Edge AI SmartZones** — offline autonomous safety nodes  
+- 🌡️ **Thermal + Radar Sensors** — congestion & heat detection in all conditions  
+- 🔊 **AI Acoustic Sensing** — detect panic, chanting, or distress instantly  
+- 🌱 **ESG-AI** — bio-waste & gas detection for eco-friendly management  
+- 🟩🟨🟥 **Zone Harmony Color Language (ZHCL)** — universal crowd guidance  
+- 🧘 **Shanti Pulse 2.0** — synchronized chants, light pulses & breathing visuals  
+- 🌐 **LoRa Mesh Networking** — works even without Wi-Fi/5G  
+- 🤝 **Pilgrim Feedback Grid** — QR/kiosk-powered feedback loop  
+- 🧑‍🤝‍🧑 **Accessibility First** — AI sign-language avatars, multilingual voice alerts  
+- 🗺️ **Digital Twin of Ujjain** — live predictive simulation map  
+
+---
+
+## 📦 Repository Structure  
+Trinetra_Prototype_Submission/
+│── client/       # React dashboard (Vite)
+│── server/       # Node.js + Socket.IO backend
+│── simulator/    # Python + Node.js simulators
+│── assets/       # PPT, storyboard, video scripts
+│── README.md     # This file
+
+---
+
+## 🧪 Demo  
+
+- Run server, client, and simulator with one command:  
+  ```bash
+  npm run dev
+
+  Open http://localhost:5173 to see the live dashboard
+
+## Built By
+Rasi Solutions — Transforming Ideas to Reality
+Women-led | AI-first | Human-first Innovation
